@@ -33,13 +33,13 @@ public class APIController {
     @RequestMapping(value = "/locations", produces = MediaType.APPLICATION_JSON_VALUE, method = {RequestMethod.GET})
     public LocationsResponse getLocations(LocationsRequest request) throws IOException {
         log.trace("locations request received");
-        return "{\"hello\":\"world\"}";
+        return new LocationsResponse();
     }
 
     @RequestMapping(value = "/venues", produces = MediaType.APPLICATION_JSON_VALUE, method = {RequestMethod.GET})
     public VenuesResponse getVenues(VenuesRequest request) throws IOException {
         log.trace("locations request received");
-        return "{\"hello\":\"world\"}";
+        return new VenuesResponse();
     }
 
 }
