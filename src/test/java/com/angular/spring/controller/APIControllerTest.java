@@ -47,6 +47,7 @@ public class APIControllerTest {
     @Before
     public void setup() {
         this.mockMvc = webAppContextSetup(this.wac).build();
+
     }
 
     @After
@@ -57,10 +58,11 @@ public class APIControllerTest {
     @Test
     public void getLocations() throws Exception {
         this.mockMvc.perform(get("/api/v1/locations").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+        this.mockMvc.perform(get("/api/v1/locations?query=london&results=5").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
     }
 
     @Test
     public void getVenues() throws Exception {
-        this.mockMvc.perform(get("/api/v1/venues").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+        this.mockMvc.perform(get("/api/v1/venues?query=Coffee&latitude=51.50853&longitude=-0.12574").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
     }
 }
