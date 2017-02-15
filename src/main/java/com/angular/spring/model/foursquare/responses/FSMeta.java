@@ -4,14 +4,14 @@ package com.angular.spring.model.foursquare.responses;
  * Created by baynescorps on 15/02/2017.
  */
 public class FSMeta {
-    private String code;
+    private Integer code;
     private String requestId;
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
