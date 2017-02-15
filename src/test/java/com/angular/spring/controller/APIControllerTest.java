@@ -55,8 +55,12 @@ public class APIControllerTest {
     }
 
     @Test
-    public void getAPI() throws Exception {
-        this.mockMvc.perform(get("/api").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+    public void getLocations() throws Exception {
+        this.mockMvc.perform(get("/api/v1/locations").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
     }
 
+    @Test
+    public void getVenues() throws Exception {
+        this.mockMvc.perform(get("/api/v1/venues").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+    }
 }
