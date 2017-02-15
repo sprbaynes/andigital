@@ -1,10 +1,9 @@
-package com.angular.spring.model;
+package com.angular.spring.model.requests;
 
 /**
- * Created by steven.baynes on 02/02/2016.
+ * Created by baynescorps on 15/02/2017.
  */
-public class APIRequest {
-
+public class LocationsRequest {
     private String query;
     private int results;
 
