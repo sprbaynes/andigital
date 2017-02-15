@@ -1,0 +1,23 @@
+{
+    "name": "angular-spring-project",
+    "description": "A Foursquare API Project for AND",
+    "version": "0.0.0",
+    "homepage": "https://localhost:3000/",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "angular": "~1.4.0",
+        "angular-ui-router": "~0.2.17",
+        "angular-loader": "~1.4.0",
+        "angular-mocks": "~1.4.0",
+        "angular-animate": "~1.4.0",
+        "bootstrap":"3.3.6",
+        "angular-bootstrap": "0.14.3",
+        "angular-google-maps": "2.3.1",
+        "lodash": "3.X - 4.X",
+        "angular-simple-logger": ">=0.0.1",
+        "angular-resource": "~1.4.0",
+        "angular-debounce": "~1.0.3",
+        "jquery": "2.2.4"
+    }
+}
