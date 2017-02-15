@@ -7,12 +7,14 @@ import java.util.List;
  */
 public class FSLocation {
     private String address;
+    private String crossStreet;
     private double lat;
     private double lng;
     private List<FSLabeledLatLngs> labeledLatLngs;
     private Integer distance;
     private String postalCode;
     private String cc;
+    private String neighborhood;
     private String city;
     private String state;
     private String country;
@@ -24,6 +26,14 @@ public class FSLocation {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getCrossStreet() {
+        return crossStreet;
+    }
+
+    public void setCrossStreet(String crossStreet) {
+        this.crossStreet = crossStreet;
     }
 
     public double getLat() {
@@ -72,6 +82,14 @@ public class FSLocation {
 
     public void setCc(String cc) {
         this.cc = cc;
+    }
+
+    public String getNeighborhood() {
+        return neighborhood;
+    }
+
+    public void setNeighborhood(String neighborhood) {
+        this.neighborhood = neighborhood;
     }
 
     public String getCity() {

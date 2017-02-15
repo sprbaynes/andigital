@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "code": 200,
+    "requestId": "58a47515dd57975a5699d968"
+  },
+  "response": {
+    "geocode": {
+      "interpretations": {
+        "count": 3,
+        "items": [
+          {
+            "what": "",
+            "where": "london",
+            "feature": {
+              "cc": "GB",
+              "name": "London",
+              "displayName": "London, Greater London, United Kingdom",
+              "matchedName": "London, Greater London, United Kingdom",
+              "highlightedName": "<b>London<\/b>, Greater London, United Kingdom",
+              "woeType": 7,
+              "slug": "london",
+              "id": "geonameid:2643743",
+              "longId": "72057594040571679",
+              "geometry": {
+                "center": {
+                  "lat": 51.50853,
+                  "lng": -0.12574
+                },
+                "bounds": {
+                  "ne": {
+                    "lat": 51.691643999655895,
+                    "lng": 0.33418999705203406
+                  },
+                  "sw": {
+                    "lat": 51.28467404417054,
+                    "lng": -0.5085579279369435
+                  }
+                }
+              }
+            },
+            "parents": []
+          },
+          {
+            "what": "",
+            "where": "london",
+            "feature": {
+              "cc": "CA",
+              "name": "London",
+              "displayName": "London, ON, Canada",
+              "matchedName": "London, ON, Canada",
+              "highlightedName": "<b>London<\/b>, ON, Canada",
+              "woeType": 7,
+              "slug": "london-ontario-canada",
+              "id": "geonameid:6058560",
+              "longId": "72057594043986496",
+              "geometry": {
+                "center": {
+                  "lat": 42.98339,
+                  "lng": -81.23304
+                },
+                "bounds": {
+                  "ne": {
+                    "lat": 43.0730469,
+                    "lng": -81.1070784
+                  },
+                  "sw": {
+                    "lat": 42.8245154,
+                    "lng": -81.3906556
+                  }
+                }
+              }
+            },
+            "parents": []
+          },
+          {
+            "what": "",
+            "where": "london",
+            "feature": {
+              "cc": "GB",
+              "name": "Greenwich",
+              "displayName": "Greenwich, Greater London, United Kingdom",
+              "matchedName": "London Borough of Greenwich, Greater London, United Kingdom",
+              "highlightedName": "<b>London<\/b> Borough of Greenwich, Greater London, United Kingdom",
+              "woeType": 10,
+              "id": "geonameid:3333147",
+              "longId": "72057594041261083",
+              "geometry": {
+                "center": {
+                  "lat": 51.45,
+                  "lng": 0.05
+                },
+                "bounds": {
+                  "ne": {
+                    "lat": 51.513587951660156,
+                    "lng": 0.1241607740521431
+                  },
+                  "sw": {
+                    "lat": 51.42373275756836,
+                    "lng": -0.026408705860376358
+                  }
+                }
+              }
+            },
+            "parents": []
+          }
+        ]
+      }
+    }
+  }
+}

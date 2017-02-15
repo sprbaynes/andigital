@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 /**
  * Created by baynescorps on 15/02/2017.
  */
-public class FSVenueChain {
+public class FSVenuePage {
 
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private String id;

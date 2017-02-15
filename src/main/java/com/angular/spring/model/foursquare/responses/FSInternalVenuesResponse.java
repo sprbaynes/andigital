@@ -7,4 +7,12 @@ import java.util.List;
  */
 public class FSInternalVenuesResponse {
     private List<FSVenue> venues;
+
+    public List<FSVenue> getVenues() {
+        return venues;
+    }
+
+    public void setVenues(List<FSVenue> venues) {
+        this.venues = venues;
+    }
 }

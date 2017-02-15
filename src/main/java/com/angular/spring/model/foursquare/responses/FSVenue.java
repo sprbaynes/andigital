@@ -1,5 +1,7 @@
 package com.angular.spring.model.foursquare.responses;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.List;
 
 /**
@@ -15,9 +17,23 @@ public class FSVenue {
     private Boolean verified;
     private FSStats stats;
     private String url;
+
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    private Boolean hasMenu;
+
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    private FSMenu menu;
+
     private Boolean allowMenuUrlEdit;
     private FSBeenHere beenHere;
     private FSSpecials specials;
+
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    private FSVenuePage venuePage;
+
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    private String storeId;
+
     private FSHereNow hereNow;
     private String referralId;
     private List<FSVenueChain> venueChains;
@@ -87,6 +103,22 @@ public class FSVenue {
         this.url = url;
     }
 
+    public Boolean getHasMenu() {
+        return hasMenu;
+    }
+
+    public void setHasMenu(Boolean hasMenu) {
+        this.hasMenu = hasMenu;
+    }
+
+    public FSMenu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(FSMenu menu) {
+        this.menu = menu;
+    }
+
     public Boolean getAllowMenuUrlEdit() {
         return allowMenuUrlEdit;
     }
@@ -109,6 +141,22 @@ public class FSVenue {
 
     public void setSpecials(FSSpecials specials) {
         this.specials = specials;
+    }
+
+    public FSVenuePage getVenuePage() {
+        return venuePage;
+    }
+
+    public void setVenuePage(FSVenuePage venuePage) {
+        this.venuePage = venuePage;
+    }
+
+    public String getStoreId() {
+        return storeId;
+    }
+
+    public void setStoreId(String storeId) {
+        this.storeId = storeId;
     }
 
     public FSHereNow getHereNow() {

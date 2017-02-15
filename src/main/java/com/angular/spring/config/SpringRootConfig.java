@@ -23,7 +23,7 @@ import java.net.URISyntaxException;
  * Created by steven.baynes on 02/02/2016.
  */
 @Configuration
-@ComponentScan({"com.angular.spring.services", "com.angular.spring.util", "com.angular.spring.config.db"})
+@ComponentScan({"com.angular.spring.services", "com.angular.spring.util"})
 @PropertySource({"classpath:application.properties","file:${config.location}"})
 public class SpringRootConfig {
 
