@@ -2,6 +2,8 @@ package com.angular.spring.controller.v1;
 
 import com.angular.spring.model.requests.LocationsRequest;
 import com.angular.spring.model.requests.VenuesRequest;
+import com.angular.spring.model.responses.LocationsResponse;
+import com.angular.spring.model.responses.VenuesResponse;
 import com.angular.spring.services.ConfigService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,13 +31,13 @@ public class APIController {
 
 
     @RequestMapping(value = "/locations", produces = MediaType.APPLICATION_JSON_VALUE, method = {RequestMethod.GET})
-    public String getLocations(LocationsRequest request) throws IOException {
+    public LocationsResponse getLocations(LocationsRequest request) throws IOException {
         log.trace("locations request received");
         return "{\"hello\":\"world\"}";
     }
 
     @RequestMapping(value = "/venues", produces = MediaType.APPLICATION_JSON_VALUE, method = {RequestMethod.GET})
-    public String getVenues(VenuesRequest request) throws IOException {
+    public VenuesResponse getVenues(VenuesRequest request) throws IOException {
         log.trace("locations request received");
         return "{\"hello\":\"world\"}";
     }
