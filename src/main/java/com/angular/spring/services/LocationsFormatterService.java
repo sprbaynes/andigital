@@ -3,7 +3,6 @@ package com.angular.spring.services;
 import com.angular.spring.model.foursquare.responses.FSLocationsResponse;
 import com.angular.spring.model.responses.Location;
 import com.angular.spring.model.responses.LocationsResponse;
-import com.sun.tools.javac.file.Locations;
 
 import java.util.List;
 
