@@ -26,4 +26,16 @@ public class VenuesResponse {
     public void setVenues(List<Venue> venues) {
         this.venues = venues;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        VenuesResponse that = (VenuesResponse) o;
+
+        if (meta != null ? !meta.equals(that.meta) : that.meta != null) return false;
+        return !(venues != null ? !venues.equals(that.venues) : that.venues != null);
+
+    }
 }

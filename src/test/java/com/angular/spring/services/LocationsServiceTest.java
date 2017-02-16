@@ -75,6 +75,7 @@ public class LocationsServiceTest {
         LocationsResponse locationsResponse2 = locationsService.getLocations(locationsRequest2);
 
         assertEquals(locationsResponse2, new LocationsResponse());
+        assertNull(locationsResponse2.getLocations());
     }
 
 }
