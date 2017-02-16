@@ -9,7 +9,9 @@ var angularSpringApp = angular.module('angularSpringApp',
             'ui.router',
             'ui.bootstrap',
             'angularSpringControllers.rootController',
-            'springAngularServices.apiService'
+            'angularSpringControllers.searchFormController',
+            'springAngularServices.apiService',
+            'springAngularServices.searchState'
         ]
     );
 
@@ -25,6 +27,11 @@ angularSpringApp.config(
           'root': {
               templateUrl: 'js/controllers/root/root.html',
               controller: 'rootController',
+              controllerAs: 'ctrl'
+          },
+          'searchForm@root':{
+              templateUrl: 'js/controllers/searchForm/searchForm.html',
+              controller: 'searchFormController',
               controllerAs: 'ctrl'
           }
       }

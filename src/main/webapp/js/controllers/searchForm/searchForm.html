@@ -1,0 +1,29 @@
+
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Search form</h2>
+        <h3>Location</h3>
+        <!--<pre>{{searchState.selectedLocation}}&nbsp;</pre>-->
+        <input type="text" ng-model="searchState.selectedLocation"
+               placeholder="Location"
+               uib-typeahead="location.displayName for location in searchState.locations | filter:$viewValue"
+               typeahead-loading="loadingLocations"
+               typeahead-no-results="noResults"
+               class="form-control" ng-change="getLocations(searchState.selectedLocation, 3)">
+        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+        <div ng-show="noResults">
+            <i class="glyphicon glyphicon-remove"></i> No Results Found
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Venue</h3>
+        <!--<div class="input-group" style="margin-bottom:20px;">
+            <input type="text" class="form-control" ng-model="searchState.venueQuery" placeholder="e.g. Coffee, Restaraunt">
+              <span class="input-group-btn">
+                <button class="btn btn-success" type="button" ng-click="getVenues(searchState.venueQuery, searchState.selectedLocationObj.feature.geometry.center.lat, searchState.selectedLocationObj.feature.geometry.center.lng)">Go!</button>
+              </span>
+        </div>-->
+    </div>
+</div>
