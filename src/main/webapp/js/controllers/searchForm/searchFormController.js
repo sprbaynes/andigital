@@ -26,19 +26,6 @@ var searchFormCtrl = function($scope, $state, apiService, searchState){
         var lat = searchState.selectedLocationObj.lat;
         var lng = searchState.selectedLocationObj.lng;
 
-        /*var populateVenueMarkers = function()
-        {
-            console.log("populating venue markers");
-            searchState.venueMarkers = [];
-
-            for( var i = 0; i < searchState.venues.length; i++)
-            {
-                console.log("lat %s, lng %s",searchState.venues[i].location.lat, searchState.venues[i].location.lng);
-                searchState.venueMarkers[i] = {markerId: i+1, latitude: searchState.venues[i].location.lat , longitude: searchState.venues[i].location.lng};
-            }
-        }
-*/
-
         var getVenuesFN = function(query, lat, lng)
         {
             console.log(" query %s lat %s lng %s", query, lat, lng);
@@ -46,17 +33,12 @@ var searchFormCtrl = function($scope, $state, apiService, searchState){
             if(query && lat && lng)
             {
                 var success = function(response){
-                    /*$scope.venuesError = false;
-                     $scope.venuesErrorMessage = "";
-                     $scope.venues = response.data.locations;*/
                     console.log("Venues response OK: %s venues returned", response.data.venues.length);
                     searchState.venues = response.data.venues;
-                    //populateVenueMarkers();
+
                 };
 
                 var error = function (response) {
-                    /*$scope.venuesError = true;
-                     $scope.venuesErrorMessage = "Failed to retrieve venues";*/
                     console.error(response.data.meta, response.data);
                     searchState.venues = [];
                     searchState.venueMarkers = [];
