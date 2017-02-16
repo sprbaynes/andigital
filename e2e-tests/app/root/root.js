@@ -35,5 +35,40 @@ describe('Home page', function(){
         expect(paragraph.getText()).toBe("This is an SPA making use of Angular and Spring");
     });
 
+    it("Should have autocomplete on the Location input",function(){
+        var queryField = element(by.model('searchState.selectedLocation'));
+        queryField.click();
+
+        var dropDownItems = element.all(by.css('.dropdown-menu li'));
+        expect(dropDownItems.count()).toBe(0);
+
+        queryField.clear();
+        queryField.sendKeys("L");
+        browser.sleep(300);
+        queryField.sendKeys("o");
+        browser.sleep(300);
+        queryField.sendKeys("n");
+        browser.sleep(300);
+        queryField.sendKeys("d");
+        browser.sleep(300);
+        queryField.sendKeys("o");
+        browser.sleep(300);
+        queryField.sendKeys("n");
+        browser.sleep(300);
+
+        expect(queryField.getAttribute('value')).toBe("London");
+        browser.sleep(1000);
+
+        expect(dropDownItems.count()).toBe(3);
+
+        var firstItemText = "London, Greater London, United Kingdom";
+        var firstItem = dropDownItems.get(0);
+
+        firstItem.click();
+
+        expect(queryField.getAttribute('value')).toBe(firstItemText);
+
+    });
+
 });
 
