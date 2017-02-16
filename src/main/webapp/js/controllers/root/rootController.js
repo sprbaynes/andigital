@@ -40,7 +40,7 @@ var rootCtrl = function($scope, $state, apiService){
                 $scope.venuesErrorMessage = "";
 
                 console.log(JSON.stringify(response.data));
-                $scope.venues = response.data.locations;
+                $scope.venues = response.data.venues;
         }, function error(response) {
             $scope.venuesError = true;
             console.error(response.data.meta, response.data);

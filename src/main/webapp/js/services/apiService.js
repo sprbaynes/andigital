@@ -8,7 +8,7 @@ var apiService = function($http){
     }
 
     this.getVenues = function(query, lat,lng){
-        return $http.get("/api/v1/locations", {params:{query:query, latitude:lat, longitude: lng}});
+        return $http.get("/api/v1/venues", {params:{query:query, latitude:lat, longitude: lng}});
     }
 
 };

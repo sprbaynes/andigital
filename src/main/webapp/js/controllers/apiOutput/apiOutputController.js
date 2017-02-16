@@ -1,32 +1,44 @@
 'use strict';
 
-var springAngularControllers = angular.module('springAngularControllers.apiOutputController', []);
+var springAngularControllers = angular.module('angularSpringControllers.apiOutputController', []);
 
 
-var apiOutputCtrl = function($scope, $state/*, apiService*/){
-        console.log("Running apiOutputCtrl function");
+var apiOutputCtrl = function($scope,searchState/*, apiService*/){
+    $scope.getLocationObj = function(displayName)
+    {
+        var resultLocation = null;
+        for(var i = 0; i < searchState.locations.length; i++)
+        {
+            console.log(searchState.locations[i].displayName);
+            if(displayName === searchState.locations[i].displayName)
+            {
+                resultLocation = searchState.locations[i];
+            }
+        }
 
-        $scope.apiOutput = {"hello":"world"};
+        return resultLocation;
+    }
 
+    var populateSearchState = function(){
+        var selectedLocationObj = $scope.getLocationObj(searchState.selectedLocation);
 
+        if(selectedLocationObj != null)
+        {
+            searchState.selectedLocationObj = selectedLocationObj;
 
-         var getLocationsFN = function()
-           {
-              /*apiService.get({},
-                  function(response)
-                  {
-                    $scope.apiOutput = response;
-                  }
+            $scope.homeMarker = { latitude: selectedLocationObj.lat , longitude: selectedLocationObj.lng};
+            $scope.map = { center: { latitude: selectedLocationObj.lat , longitude: selectedLocationObj.lng}, zoom: 14 };
+        }
+    }
 
-               )*/
+    populateSearchState();
 
-               return null;
-           };
+    $scope.$watch('searchState.selectedLocation', function()
+    {
+        populateSearchState();
+    });
 
-        $scope.getLocationsFN = getLocationsFN;
-
-
-        getLocationsFN();
+    $scope.searchState = searchState;
     };
 
-springAngularControllers.controller("apiOutputController",["$scope", "$state", "apiService",  apiOutputCtrl]);
+springAngularControllers.controller("apiOutputController",["$scope", "searchState",  apiOutputCtrl]);

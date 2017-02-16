@@ -1,14 +1,38 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <h2>API List</h2>
+        <h4>{{searchState.venues.length}} venue results found</h4>
     </div>
 </div>
-<div class="row">
+
+<div class="venue-result" ng-if="searchState.venues && searchState.venues.length > 0 " class="row">
     <div class="col-sm-12">
-        <h3>Angular Spring</h3>
-        <div class="input-group" style="margin-bottom:20px;">
-                           {{apiOutput}}
+        <div class="row">
+            <div class="col-xs-1">
+                <div class="venue-img"></div>
+            </div>
+            <div class="col-xs-8">
+                <div class="venue-name"><h4>Details</h4></div>
+            </div>
+            <div class="col-xs-3">
+                <div class="venue-distance"><h4>Distance</h4></div>
+            </div>
         </div>
+    </div>
+</div>
+
+<div class="venue-result" ng-repeat="venue in searchState.venues | orderBy:'distance'" class="row">
+    <div class="col-sm-12">
+            <div class="row">
+                <div class="col-xs-1">
+                    <div class="venue-img"><img class="thumbnail" src="images/cart_icon.png" /></div>
+                </div>
+                <div class="col-xs-8">
+                    <div class="venue-name">{{$index+1}}. {{venue.name}}<span ng-if="venue.city">, {{venue.city}}</span><span ng-if="venue.state">, {{venue.state}}</span></div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="venue-distance">{{venue.distance}}m</div>
+                </div>
+            </div>
     </div>
 </div>

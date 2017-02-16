@@ -11,7 +11,7 @@ var searchFormCtrl = function($scope, $state, apiService, searchState){
            {
 
                var success = function(response) {
-                   console.log(JSON.stringify(response.data));
+                   console.log("Locations response OK: %s locations returned", response.data.locations.length);
                    $scope.searchState.locations = response.data.locations;
                };
 
@@ -39,43 +39,35 @@ var searchFormCtrl = function($scope, $state, apiService, searchState){
         }
 */
 
- /*       var getVenuesFN = function(query, lat, lng)
+        var getVenuesFN = function(query, lat, lng)
         {
             console.log(" query %s lat %s lng %s", query, lat, lng);
-            apiService.getVenues(query, lat,lng).then(
-                function success(response) {
-                    $scope.venuesError = false;
-                    $scope.venuesErrorMessage = "";
 
-                    console.log(JSON.stringify(response.data));
-                    $scope.venues = response.data.locations;
-                }, function error(response) {
-                    $scope.venuesError = true;
+            if(query && lat && lng)
+            {
+                var success = function(response){
+                    /*$scope.venuesError = false;
+                     $scope.venuesErrorMessage = "";
+                     $scope.venues = response.data.locations;*/
+                    console.log("Venues response OK: %s venues returned", response.data.venues.length);
+                    searchState.venues = response.data.venues;
+                    //populateVenueMarkers();
+                };
+
+                var error = function (response) {
+                    /*$scope.venuesError = true;
+                     $scope.venuesErrorMessage = "Failed to retrieve venues";*/
                     console.error(response.data.meta, response.data);
-                    $scope.venuesErrorMessage = "Failed to retrieve venues";
-                })
+                    searchState.venues = [];
+                    searchState.venueMarkers = [];
+                };
 
-                get( {queryString:query, lat: lat, lng:lng},
-                function(response){
-
-                    var resCode = response.meta.code;
-
-                    if(typeof resCode !== "undefined" && resCode === 200 )
-                    {
-                      console.log("response is fine");
-                      searchState.venues = response.response.venues;
-                      populateVenueMarkers();
-                    }
-                    else{
-                      console.log("response is not fine");
-                      searchState.venues = [];
-                      searchState.venueMarkers = [];
-                    }
-                });
-        }*/
+                apiService.getVenues(query, lat,lng).then(success, error);
+            }
+        };
 
          $scope.getLocations = getLocationsFN;
-         /*$scope.getVenues = getVenuesFN;*/
+         $scope.getVenues = getVenuesFN;
 
     };
 

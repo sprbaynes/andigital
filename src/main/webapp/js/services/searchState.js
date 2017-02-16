@@ -4,7 +4,7 @@ var foursquareServices = angular.module('springAngularServices.searchState', [])
 foursquareServices.factory('searchState', function(){
 
     return {
-        venueQuery:"Coffee",
+        venueQuery:"",
         selectedLocation:"London, Greater London, United Kingdom",
         selectedLocationObj: {
             "name":"London",
