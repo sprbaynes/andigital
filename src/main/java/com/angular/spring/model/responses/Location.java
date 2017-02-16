@@ -40,4 +40,18 @@ public class Location {
     public void setLng(double lng) {
         this.lng = lng;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Location location = (Location) o;
+
+        if (Double.compare(location.lat, lat) != 0) return false;
+        if (Double.compare(location.lng, lng) != 0) return false;
+        if (name != null ? !name.equals(location.name) : location.name != null) return false;
+        return !(displayName != null ? !displayName.equals(location.displayName) : location.displayName != null);
+
+    }
 }

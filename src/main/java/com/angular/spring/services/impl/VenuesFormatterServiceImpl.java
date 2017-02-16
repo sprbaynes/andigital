@@ -29,8 +29,10 @@ public class VenuesFormatterServiceImpl implements VenuesFormatterService {
 
         VenuesResponse venuesResponse = new VenuesResponse();
 
-        convertMeta(fsResponse, venuesResponse);
-        convertVenuesList(fsResponse, venuesResponse);
+        if(fsResponse != null) {
+            convertMeta(fsResponse, venuesResponse);
+            convertVenuesList(fsResponse, venuesResponse);
+        }
 
         return venuesResponse;
     }
@@ -44,10 +46,13 @@ public class VenuesFormatterServiceImpl implements VenuesFormatterService {
         APIMeta apiMeta = new APIMeta();
         FSMeta fsMeta = from.getMeta();
 
-        log.trace("fsMeta: {}", fsMeta.getCode());
+        if(fsMeta != null)
+        {
+            log.trace("fsMeta: {}", fsMeta.getCode());
 
-        apiMeta.setCode(fsMeta.getCode().toString());
-        to.setMeta(apiMeta);
+            apiMeta.setCode(fsMeta.getCode().toString());
+            to.setMeta(apiMeta);
+        }
     }
 
     public void convertVenuesList(FSVenuesResponse from, VenuesResponse to) {

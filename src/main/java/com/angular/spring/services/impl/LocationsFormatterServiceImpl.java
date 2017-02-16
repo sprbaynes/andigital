@@ -28,8 +28,12 @@ public class LocationsFormatterServiceImpl implements LocationsFormatterService 
     public LocationsResponse getNativeLocations(FSLocationsResponse fsResponse) {
 
         LocationsResponse locationsResponse = new LocationsResponse();
-        convertMeta(fsResponse, locationsResponse);
-        convertLocationsList(fsResponse, locationsResponse);
+
+        if(fsResponse != null)
+        {
+            convertMeta(fsResponse, locationsResponse);
+            convertLocationsList(fsResponse, locationsResponse);
+        }
 
         return locationsResponse;
     }
@@ -42,9 +46,13 @@ public class LocationsFormatterServiceImpl implements LocationsFormatterService 
     public void convertMeta(FSLocationsResponse from, LocationsResponse to){
         APIMeta apiMeta = new APIMeta();
         FSMeta fsMeta = from.getMeta();
-        log.trace("fsMeta: {}", fsMeta.getCode());
-        apiMeta.setCode(fsMeta.getCode().toString());
-        to.setMeta(apiMeta);
+
+        if(fsMeta != null)
+        {
+            log.trace("fsMeta: {}", fsMeta.getCode());
+            apiMeta.setCode(fsMeta.getCode().toString());
+            to.setMeta(apiMeta);
+        }
     }
 
     public void convertLocationsList(FSLocationsResponse from, LocationsResponse to) {
