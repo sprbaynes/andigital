@@ -13,12 +13,12 @@ describe('rootController', function() {
             $controller = _$controller_;
         }));
 
-        it('sets the title to "Angular Spring"', function() {
+        it('sets the title to "Foursquare Project"', function() {
             var $scope = {};
             var controller = $controller('rootController', { $scope: $scope });
 
             $scope.title;
-            expect($scope.title).toEqual("Angular Spring");
+            expect($scope.title).toEqual("Foursquare Project");
         });
 
     });

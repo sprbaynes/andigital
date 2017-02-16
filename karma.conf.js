@@ -11,7 +11,10 @@ module.exports = function(config) {
             'bower_components/angular-resource/angular-resource.js',
             'bower_components/angular-bootstrap/ui-bootstrap.js',
             'bower_components/angular-mocks/angular-mocks.js',
-            'src/main/webapp/js/{**/*.js, !(dependencies)}'
+            'src/main/webapp/js/app.js',
+            'src/main/webapp/js/controllers/**/*.js',
+            'src/main/webapp/js/services/**/*.js'
+
         ],
 
         autoWatch: true,
