@@ -7,6 +7,19 @@
     </div>
     <div class="row">
         <div class="col-sm-12 col-md-4">
+
+            <h2>Locations</h2>
+
+            <li ng-repeat="l in locations">
+                {{l.name}}
+            </li>
+
+
+            <h2>Venues</h2>
+            <li ng-repeat="v in venues">
+                {{v.displayName}}
+            </li>
+
             <div ui-view="apiOutput">
 
             </div>

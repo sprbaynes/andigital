@@ -9,6 +9,7 @@ var angularSpringApp = angular.module('angularSpringApp',
             'ui.router',
             'ui.bootstrap',
             'angularSpringControllers.rootController',
+            'springAngularServices.apiService'
         ]
     );
 
@@ -16,12 +17,10 @@ var angularSpringApp = angular.module('angularSpringApp',
 angularSpringApp.config(
   function($stateProvider, $urlRouterProvider) {
 
-    console.log("in app config");
-
-    $urlRouterProvider.otherwise('/home');
-    $urlRouterProvider.when('', '/home');
+    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.when('', '/');
     $stateProvider.state('root', {
-      url: '',
+      url: '/',
       views: {
           'root': {
               templateUrl: 'js/controllers/root/root.html',
