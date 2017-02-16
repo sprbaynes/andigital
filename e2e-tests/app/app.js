@@ -1,7 +1,7 @@
-describe('Angular Spring Application', function() {
+describe('Foursquare Project', function() {
 
-    it('should redirect `/` to `/#/home', function () {
-        browser.get('/');
-        expect(browser.getLocationAbsUrl()).toBe('/home');
+    it('should redirect `` to `/', function () {
+        browser.get('');
+        expect(browser.getLocationAbsUrl()).toBe('/');
     });
 });
